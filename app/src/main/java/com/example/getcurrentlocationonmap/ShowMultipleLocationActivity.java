@@ -120,6 +120,48 @@ public class ShowMultipleLocationActivity extends FragmentActivity implements On
 
             // below line is use to move our camera to the specific location.
             mMap.moveCamera(CameraUpdateFactory.newLatLng(locationArrayList.get(i)));
+
+
+            //Marker mulund
+            MarkerOptions markerOpt1 = new MarkerOptions();
+            markerOpt1.position(new LatLng(Double.valueOf(19.1720555), Double.valueOf(72.9562915)))
+                    .title(location)
+                    .snippet("Pandit Jawaharlal Nehru Rd, station, Mulund West, Mumbai, Maharashtra 400080");
+            /*.icon(BitmapDescriptorFactory.fromResource(R.drawable.placeholder));*/
+
+
+            //Marker dombivli
+            MarkerOptions markerOpt2 = new MarkerOptions();
+            markerOpt2.position(new LatLng(Double.valueOf(19.218194), Double.valueOf(73.086785)))
+                    .title(location)
+                    .snippet(" CST Side E-W FOB, Vishnu Nagar, Dombivli West, Dombivli, Maharashtra 421201");
+            /*.icon(BitmapDescriptorFactory.fromResource(R.drawable.placeholder));*/
+
+
+
+            //Marker thane
+            MarkerOptions markerOpt3 = new MarkerOptions();
+            markerOpt3.position(new LatLng(Double.valueOf(19.1860408), Double.valueOf(72.9758837)))
+                    .title(location)
+                    .snippet("Thane, Maharashtra");
+            /*.icon(BitmapDescriptorFactory.fromResource(R.drawable.placeholder));*/
+
+
+            //Marker diva
+            MarkerOptions markerOpt4 = new MarkerOptions();
+            markerOpt4.position(new LatLng(Double.valueOf(19.188885), Double.valueOf(73.0431215)))
+                    .title(location)
+                    .snippet("Sadguru Nagar, Diva, Thane, Maharashtra 400612");
+            /*.icon(BitmapDescriptorFactory.fromResource(R.drawable.placeholder));*/
+
+            //Set Custom InfoWindow Adapter
+            CustomInfoWindowAdapter adapter = new CustomInfoWindowAdapter(ShowMultipleLocationActivity.this);
+            mMap.setInfoWindowAdapter(adapter);
+
+            mMap.addMarker(markerOpt1).showInfoWindow();
+            mMap.addMarker(markerOpt2).showInfoWindow();
+            mMap.addMarker(markerOpt3).showInfoWindow();
+            mMap.addMarker(markerOpt4).showInfoWindow();
         }
 
 
